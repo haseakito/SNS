@@ -1,12 +1,16 @@
 import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { NoticeModal } from './NoticeModal'
+import { useLoginModal } from '@/hooks/useLoginModal'
 import { useRegisterModal } from '@/hooks/useRegisterModal'
 import CloseIcon from '@mui/icons-material/Close'
 
 export function SignupForm() {
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: 'onSubmit' })
+
+    // Hooks handling the state of being open or not
+    const loginModal = useLoginModal()
 
     // Hooks handling the state of being open or not
     const registerModal = useRegisterModal()
@@ -39,7 +43,9 @@ export function SignupForm() {
         }
 
         registerModal.onClose()
-    }, [])
+        loginModal.onOpen()
+
+    }, [registerModal, loginModal])
 
     // Function handling the submit user input
     const onSubmit = useCallback(async () => {
