@@ -8,7 +8,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { SidebarItem } from './SidebarItem'
 import SidebarTweet from './SidebarTweet'
 
-export function Sidebar() {
+export function SidebarLeft() {
 
     const SidebarData = [
         {
