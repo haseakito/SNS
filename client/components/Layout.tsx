@@ -1,6 +1,6 @@
 import React from 'react'
-import { SidebarLeft } from './SidebarLeft'
-import { SidebarRight } from './SidebarRight'
+import { SidebarLeft } from './SidebarLeft/SidebarLeft'
+import { SidebarRight } from './SidebarRight/SidebarRight'
 
 type LayoutProps = {
     children: React.ReactNode

@@ -1,6 +1,5 @@
-import React from 'react'
-import { Searchbar } from './Searchbar'
 import Followbar from './Followbar'
+import { Searchbar } from './Searchbar'
 import { Trendbar } from './Trendbar'
 
 export function SidebarRight() {
