@@ -41,6 +41,7 @@ export function SidebarLeft() {
                 { SidebarData.map((value, key) => {
                     return (
                         <SidebarItem
+                        key={key}
                         title={ value.title }
                         link={ value.link }
                         icon={ value.icon }
