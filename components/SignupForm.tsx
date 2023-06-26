@@ -4,6 +4,8 @@ import { NoticeModal } from './NoticeModal'
 import { useLoginModal } from '@/hooks/useLoginModal'
 import { useRegisterModal } from '@/hooks/useRegisterModal'
 import { Modal } from './Modal'
+import { signInWithPopup } from 'firebase/auth'
+import { auth, provider } from './auth/Firebase'
 
 // TODO ConfirmPassword in Typescript
 type UserModel = {
@@ -72,6 +74,10 @@ export function SignupForm() {
             setIsLoading(false)
         }
     }, [registerModal])
+
+    const onGoogle = () => {
+        signInWithPopup(auth, provider)
+    }
 
     const bodyContent = (
         <form onSubmit={handleSubmit(onSubmit)}>
