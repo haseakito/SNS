@@ -8,9 +8,14 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: docker-compose build
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TWITTER_CLONE_53C3C }}'
