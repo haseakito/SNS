@@ -1,0 +1,24 @@
+name: Build and Test
+
+on:
+    # Events triggered on push event to main branch
+    push:
+        branches: [main]
+
+    # Events triggered on pull request event to main branch
+    pull_request:
+        branches: [main]
+
+jobs:
+    Build:
+        # define a runner
+        runs-on: ubuntu-latest
+
+        steps:
+            # Check out the repository so that our workflow can access it
+            - name: Check out
+              uses: actions/checkout@v3
+
+            # Build the docker image
+            - name: Build
+              run: docker build -f Dockerfile.dev .
