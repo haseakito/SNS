@@ -1,6 +1,7 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications'
 import HomeIcon from '@mui/icons-material/Home'
+import ChatIcon from '@mui/icons-material/Chat'
 import LogoutIcon from '@mui/icons-material/Logout'
 import SettingsIcon from '@mui/icons-material/Settings'
 import TwitterIcon from '@mui/icons-material/Twitter'
@@ -19,6 +20,11 @@ export function SidebarLeft() {
             title: 'Notification',
             link: '/notification',
             icon: <CircleNotificationsIcon />
+        },
+        {
+            title: 'Message',
+            link: '/message',
+            icon: <ChatIcon />
         },
         {
             title: 'Profile',
@@ -41,18 +47,18 @@ export function SidebarLeft() {
                 { SidebarData.map((value, key) => {
                     return (
                         <SidebarItem
-                        key={key}
-                        title={ value.title }
-                        link={ value.link }
-                        icon={ value.icon }
+                            key={key}
+                            title={ value.title }
+                            link={ value.link }
+                            icon={ value.icon }
                          />
                     )
                 })}
                 <SidebarItem 
-                title='Logout'
-                link=''
-                icon = { <LogoutIcon /> }
-                onClick={() => ''}
+                    title='Logout'
+                    link=''
+                    icon = { <LogoutIcon /> }
+                    onClick={() => ''}
                 />
                 <SidebarTweet />
             </div>
